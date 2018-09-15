@@ -1,0 +1,40 @@
+<html>
+<body>
+<div style="margin-top: 200px;" align="center">
+<h1 style="font-size: 5px; color: red;"></h1>
+</div>
+<script>
+	var text = document.querySelector('h1');
+	var font = 5;
+	var flag = 0;
+	function inc(){
+		font++;
+		text.style.fontSize = font;
+		text.style.color = "orange";
+		text.textContent="TEXT is GROWINGGGGG "+font+"pt";
+		if(font==100){
+		flag=1;
+		}
+		
+	}
+	function dec(){
+		font--;
+		text.style.fontSize = font;
+		text.style.color = "magenta";
+		text.textContent="TEXT is SHRINKINGGG";
+		if(font==5){
+		flag=0;
+		}
+	}
+	var time = setInterval(function(){
+		if(font>5 && flag==1){
+			dec();
+		} 
+		if(font<100 && flag==0){
+			inc();
+		}		
+		
+	}, 100);
+</script>
+</body>
+</html>
